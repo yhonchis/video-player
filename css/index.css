@@ -1,0 +1,66 @@
+@import url("./buttons.css");
+:root {
+  --Primary: #43dde6;
+  --White: #ffffff;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: "Lato", sans-serif;
+}
+body {
+  color: var(--White);
+  background-color: var(--Primary);
+}
+.wrapper {
+  max-inline-size: 900px;
+  margin: auto;
+}
+.player {
+  position: relative;
+  margin-block-start: 100px;
+}
+.player-title {
+  position: absolute;
+  color: var(--White);
+  inset-block-start: 0;
+  inset-inline-start: 20px;
+}
+.player-actions {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.player video {
+  inline-size: 100%;
+  aspect-ratio: 16/9;
+  vertical-align: middle;
+  object-fit: cover;
+}
+.player-progress {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+  z-index: 2;
+  display: flex;
+  padding: 10px;
+}
+.player-progress input {
+  flex: 1;
+}
+.player-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 0.3s opacity;
+}
+.player:hover .player-overlay {
+  opacity: 1;
+}
